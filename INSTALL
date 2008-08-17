@@ -1,11 +1,27 @@
+INSTALL SITE LOGGER
+-------------------
 The following line is required to get the routes to work for the plugin.
 
-> config/routes.rb
-  map.from_plugin :site_logger
+config/routes.rb
+> map.from_plugin :site_logger
 
 
 
+INSTALL ENGINES
+---------------
 The following line is required to get the engines plugin to work properly.  Insert it after the other require at the top of the file.
 
-> config/environment.rb
-  require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+config/environment.rb
+> require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
+
+
+USAGE
+-----
+Add the following line inside controllers that should be logged.
+
+> dmt_site_logger
+
+All of the arguments passed to this function are passed on to the before_filter, so to omit logging for secret_page and page:
+
+> dmt_site_logger, :except => ['secret_page', 'page2']
