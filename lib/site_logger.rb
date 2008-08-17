@@ -20,7 +20,18 @@ module DMT
 
     module InstanceMethods
       def dmt_site_logger
-        @data = "test 2!"
+        data = Hash.new
+        data = { 'controller' => params[:controller],
+          'action' => params[:action],
+          'params' => params.to_yaml,
+          'ipaddr' => request.remote_addr,
+          'referer' => request.env['HTTP_REFERER'],
+          'browser' => request.user_agent }
+        log = Dmt::SiteLogger::Log.new(data)
+        logger.info data
+        if log.save
+          flash[:notice] = "Dmt::SiteLogger::Log was successfully create!"
+        end
       end
     end
 

@@ -4,8 +4,6 @@ class Dmt::SiteLogger::Log < ActiveRecord::Base
   validates_presence_of :controller
   validates_presence_of :action
   validates_presence_of :params
-  validates_presence_of :browser
   validates_presence_of :ipaddr
-  validates_presence_of :referer
 
 end
