@@ -1,0 +1,11 @@
+The following line is required to get the routes to work for the plugin.
+
+> config/routes.rb
+  map.from_plugin :site_logger
+
+
+
+The following line is required to get the engines plugin to work properly.  Insert it after the other require at the top of the file.
+
+> config/environment.rb
+  require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
