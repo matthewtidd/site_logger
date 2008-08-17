@@ -28,10 +28,7 @@ module DMT
           'referer' => request.env['HTTP_REFERER'],
           'browser' => request.user_agent }
         log = Dmt::SiteLogger::Log.new(data)
-        logger.info data
-        if log.save
-          flash[:notice] = "Dmt::SiteLogger::Log was successfully create!"
-        end
+        log.save
       end
     end
 

@@ -61,7 +61,6 @@ class Dmt::SiteLogger::LogsController < ApplicationController
 
     respond_to do |format|
       if @log.update_attributes(params[:dmt_site_logger_log])
-        flash[:notice] = 'Dmt::SiteLogger::Log was successfully updated.'
         format.html { redirect_to(@log) }
         format.xml  { head :ok }
       else
