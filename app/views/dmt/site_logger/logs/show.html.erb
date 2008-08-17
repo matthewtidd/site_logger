@@ -1,0 +1,33 @@
+<p>
+  <b>Controller:</b>
+  <%=h @log.controller %>
+</p>
+
+<p>
+  <b>Action:</b>
+  <%=h @log.action %>
+</p>
+
+<p>
+  <b>Params:</b>
+  <%=h @log.params %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%=h @log.browser %>
+</p>
+
+<p>
+  <b>Ipaddr:</b>
+  <%=h @log.ipaddr %>
+</p>
+
+<p>
+  <b>Referer:</b>
+  <%=h @log.referer %>
+</p>
+
+
+<%= link_to 'Edit', edit_dmt_site_logger_log_path(@log) %> |
+<%= link_to 'Back', dmt_site_logger_logs_path %>

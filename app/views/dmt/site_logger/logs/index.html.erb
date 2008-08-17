@@ -1,0 +1,30 @@
+<h1>Listing logs</h1>
+
+<table>
+  <tr>
+    <th>Controller</th>
+    <th>Action</th>
+    <th>Params</th>
+    <th>Browser</th>
+    <th>Ipaddr</th>
+    <th>Referer</th>
+  </tr>
+
+<% for log in @logs %>
+  <tr>
+    <td><%=h log.controller %></td>
+    <td><%=h log.action %></td>
+    <td><%=h log.params %></td>
+    <td><%=h log.browser %></td>
+    <td><%=h log.ipaddr %></td>
+    <td><%=h log.referer %></td>
+    <td><%= link_to 'Show', log %></td>
+    <td><%= link_to 'Edit', edit_dmt_site_logger_log_path(log) %></td>
+    <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New log', new_dmt_site_logger_log_path %>
