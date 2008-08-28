@@ -22,6 +22,6 @@ Add the following line inside controllers that should be logged.
 
 > dmt_site_logger
 
-All of the arguments passed to this function are passed on to the before_filter, so to omit logging for secret_page and page:
+All of the arguments passed to this function are passed on to the before_filter, so to omit logging for secret_page and page2:
 
 > dmt_site_logger, :except => ['secret_page', 'page2']
