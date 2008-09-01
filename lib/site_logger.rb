@@ -30,6 +30,10 @@ module DMT
         log = Dmt::SiteLogger::Log.new(data)
         log.save
       end
+    
+      def dmt_site_logger_count
+        Dmt::SiteLogger::Log.count
+      end
     end
 
   end
