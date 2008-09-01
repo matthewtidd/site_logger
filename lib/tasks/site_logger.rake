@@ -1,4 +1,4 @@
-namespace :dmt
+namespace :dmt do
 	namespace :site_logger do
 		desc "Migrate the database for the site_logger plugin."
 		task :migrate => :environment do
