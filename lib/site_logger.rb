@@ -32,7 +32,7 @@ module DMT
             'action' => params[:action],
             'user' => params[:user],
             'path_uri' => request.env['REQUEST_URI'],
-            'params' => params.to_yaml,
+            'params' => params.to_yaml + "\n" + response.headers["Status"],
             'ipaddr' => request.remote_addr,
             'referer' => request.env['HTTP_REFERER'],
             'browser' => request.user_agent }
