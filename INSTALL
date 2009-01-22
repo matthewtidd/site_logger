@@ -1,5 +1,14 @@
 INSTALL SITE LOGGER
 -------------------
+
+The site_logger plugin requires the 'engines' plugin installed.  http://rails-engines.org/download.  Follow the directions on that site to properly install the engines plugin.
+
+To install into your rails application simply copy the site_logger folder into the 'vendor/plugins' folder.
+
+The site_logger plugin has its own database table to store the log data, run the following command to migrate.
+
+> rake dmt:site_logger:migrate
+
 The following line is required to get the routes to work for the plugin.
 
 config/routes.rb
@@ -25,3 +34,11 @@ Add the following line inside controllers that should be logged.
 All of the arguments passed to this function are passed on to the before_filter, so to omit logging for secret_page and page2:
 
 > dmt_site_logger, :except => ['secret_page', 'page2']
+
+You may want to disable logging for various conditions: such as all AJAX requests.  Simply add a before_filter with the following code.
+
+> if require.xhr?
+>   dmt_site_logger_disable
+> end
+
+Copyright (c) 2008-2009 Matthew Tidd, released under the MIT license
